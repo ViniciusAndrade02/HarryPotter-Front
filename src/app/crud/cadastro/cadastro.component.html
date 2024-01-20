@@ -1,0 +1,41 @@
+<div class="cadastrar">
+
+
+
+  <div class="pre-form">
+
+    <h1 class="title">Faça suas Malas</h1>
+
+    <form class="form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="class-user">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name">
+        <span *ngIf="taked('name')?.hasError('required') && taked('name')?.touched">Coloque seu nome</span>
+        <span *ngIf="taked('name')?.hasError('maxlength') && taked('name')?.touched">Máximo 20 caracteres</span>
+      </div>
+
+      <div class="class-lastName">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email">
+      </div>
+
+      <div class="class-password">
+        <label for="password">Password</label>
+        <input id="password" type="text" formControlName="password">
+      </div>
+
+      <div class="class-password-repet">
+        <label for="repetPassoword">Repet Password</label>
+        <input id="repetPassoword" type="text" formControlName="repetPassword">
+      </div>
+
+      <div class="class-birthday">
+        <label for="">Your Birthday</label>
+        <input type="date" formGroupName="birthday">
+      </div>
+
+      <button type="submit">Cadastrar-se</button>
+
+    </form>
+  </div>
+</div>
