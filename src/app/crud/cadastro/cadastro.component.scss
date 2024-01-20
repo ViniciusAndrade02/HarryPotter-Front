@@ -16,19 +16,23 @@ label {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 
     height: 100%;
     width: 30%;
-    background-color: hsla(0, 0%, 41%, 0.6);
+    background-color: hsla(0, 0%, 41%, 0.5);
     margin-left: 5%;
   }
 
-  .title{
+  .title {
     font-size: 40px;
     color: #eee7e7;
     font-weight: 300;
+    line-height: 50px;
     padding-left: 55px;
     padding-bottom: 20px;
+    font-family: BluuNext;
+    text-transform: uppercase;
   }
 
   div {
@@ -38,7 +42,12 @@ label {
     width: 120%;
   }
 
-  input {
+  label {
+    font-family: sofia400;
+  }
+
+  input,
+  select {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -51,25 +60,30 @@ label {
     background: rgba(28, 30, 40, 0.5);
     line-height: 24px;
     color: #fff;
-    min-height: 58px;
     -webkit-transition: border 0.3s ease-in-out;
     -moz-transition: border 0.3ss ease-in-out;
     transition: border 0.3s ease-in-out;
+    height: 50px !important;
   }
 
-
+  select option {
+    font-size: 20px;
+    font-family: sofia400;
+  }
 
   button {
     color: #fff;
     margin-top: 10px;
     border: 0px;
     background-color: #7a179b;
-    font-size: 16px;
+    font-size: 20px;
     border-radius: 100px;
     width: 120%;
     padding: 16px 21px;
     cursor: pointer;
     transition: 0.8s;
+    font-family: sofia400;
+    text-align: center;
   }
 
   button:hover {
@@ -78,12 +92,23 @@ label {
   }
 }
 
-span{
+span {
   color: red;
   position: relative;
   top: -5px;
 }
 
-input.ng-invalid.ng-touched{
+input.ng-invalid.ng-touched {
   border: 1px solid red;
+}
+
+.back{
+  cursor: pointer;
+  color:#232324;
+  font-family: sofia400;
+  text-decoration: underline;
+  font-size: 20px;
+  top: 3px;
+  left: 15px;
+  position: absolute;
 }

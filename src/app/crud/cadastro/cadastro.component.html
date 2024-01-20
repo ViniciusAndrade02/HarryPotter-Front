@@ -1,41 +1,52 @@
 <div class="cadastrar">
 
-
-
   <div class="pre-form">
 
-    <h1 class="title">Faça suas Malas</h1>
+    <h1 class="title">pack your bags</h1>
 
     <form class="form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <div class="class-user">
         <label for="name">Name</label>
-        <input id="name" type="text" formControlName="name">
+        <input id="name" type="text" formControlName="name" placeholder="Elon">
         <span *ngIf="taked('name')?.hasError('required') && taked('name')?.touched">Coloque seu nome</span>
-        <span *ngIf="taked('name')?.hasError('maxlength') && taked('name')?.touched">Máximo 20 caracteres</span>
+        <span *ngIf="taked('name')?.hasError('maxlength') && taked('name')?.touched">Máximo 40 caracteres</span>
       </div>
 
       <div class="class-lastName">
         <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email">
+        <input id="email" type="email" formControlName="email" placeholder="lol@gmail.com">
+        <span *ngIf="taked('email')?.hasError('required') && taked('email')?.touched">Coloque seu email</span>
+        <span *ngIf="taked('email')?.hasError('maxlength') && taked('email')?.touched">Máximo 50 caracteres</span>
+        <span *ngIf="taked('email')?.hasError('email') && taked('email')?.touched">Digite seu Email corretamente</span>
+      </div>
+
+      <div class="">
+        <label for="house">Your House</label>
+        <select name="" id="house" formControlName="house">
+          <option value="gryffindor">Gryffindor</option>
+          <option value="hufflepuff">Hufflepuff</option>
+          <option value="ravenclaw">Ravenclaw</option>
+          <option value="slytherin">Slytherin</option>
+        </select>
       </div>
 
       <div class="class-password">
         <label for="password">Password</label>
-        <input id="password" type="text" formControlName="password">
+        <input id="password" type="password" formControlName="password" placeholder="123">
+        <span *ngIf="taked('password')?.hasError('required') && taked('password')?.touched">Insire a senha</span>
+        <span *ngIf="errorSamePassoword">Senhas devem ser iguais</span>
       </div>
 
       <div class="class-password-repet">
         <label for="repetPassoword">Repet Password</label>
-        <input id="repetPassoword" type="text" formControlName="repetPassword">
+        <input id="repetPassoword" type="password" formControlName="repetPassword" placeholder="123">
+        <span *ngIf="taked('repetPassword')?.hasError('required') && taked('repetPassword')?.touched">Insire a senha</span>
+        <span *ngIf="errorSamePassoword">Senhas devem ser iguais</span>
       </div>
 
-      <div class="class-birthday">
-        <label for="">Your Birthday</label>
-        <input type="date" formGroupName="birthday">
-      </div>
-
-      <button type="submit">Cadastrar-se</button>
+      <button [disabled]="!signupForm.valid " type="submit">Sigh Up</button>
 
     </form>
+    <p (click)="back()"  class="back">Back</p>
   </div>
 </div>
