@@ -1,7 +1,39 @@
 .menu{
   height: 100vh;
   width: 100%;
-  background-image: url("./img/principal.jpg");
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./img/principal-fundo.png");
+  background-position: top;
   background-size:cover;
   background-repeat: no-repeat;
+}
+
+h1{
+  font-size: 96px;
+  color: rgb(255, 255, 255);
+  font-family: BluuNext;
+  position: relative;
+  top: -20px;
+}
+
+p,a{
+  color: rgb(255, 255, 255);
+  font-family: sofia400;
+}
+
+p{
+  font-size: 22px;
+}
+
+a{
+  display: inline-block;
+  background-color: #514A92;
+  font-weight: 600;
+  padding: 10px 40px;
+  border-radius: 100px;
+  margin: 20px 10px;
 }
