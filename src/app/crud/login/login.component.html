@@ -1,10 +1,27 @@
-<div class="container">
-  <div class="imagem">
-    
-  </div>
+<div class="login">
+  <div class="form">
 
-  <div class="formulario">
+    <h1 class="title">Let´s Travel</h1>
 
+    <form [formGroup]="login" (ngSubmit)="doingLogin()" action="">
+
+      <div class="class-input">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" placeholder="lol@gmail.com">
+        <span *ngIf="taked('email')?.hasError('required') && taked('email')?.touched">Coloque seu email</span>
+        <span *ngIf="taked('email')?.hasError('maxlength') && taked('email')?.touched">Máximo 50 caracteres</span>
+        <span *ngIf="taked('email')?.hasError('email') && taked('email')?.touched">Digite seu Email corretamente</span>
+      </div>
+
+      <div class="class-input">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" placeholder="123">
+        <span *ngIf="taked('password')?.hasError('required') && taked('password')?.touched">Insire a senha</span>
+        <span *ngIf="taked('password')?.hasError('maxlength') && taked('password')?.touched">Maximo 20 caracteres</span>
+      </div>
+
+      <button type="submit" [disabled]="!login.valid">Login</button>
+    </form>
+    <p routerLink="/crud" class="back">Back</p>
   </div>
 </div>
-
