@@ -19,7 +19,7 @@ label {
     position: relative;
 
     height: 100%;
-    width: 30%;
+    width: 25rem;
     background-color: hsla(0, 0%, 41%, 0.5);
     margin-left: 5%;
   }
@@ -102,9 +102,9 @@ input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
 
-.back{
+.back {
   cursor: pointer;
-  color:#232324;
+  color: #232324;
   font-family: sofia400;
   text-decoration: underline;
   font-size: 20px;
