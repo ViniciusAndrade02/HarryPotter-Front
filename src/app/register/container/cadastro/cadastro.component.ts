@@ -33,7 +33,7 @@ export class CadastroComponent implements OnInit{
   }
 
   back(){
-    this.router.navigate(['/crud'])
+    this.router.navigate(['/main'])
   }
 
   onSubmit(){
